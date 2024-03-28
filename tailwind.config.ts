@@ -13,6 +13,47 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+				primary: {
+					DEFAULT: 'var(--color-primary)',
+					strong: 'var(--color-primary-strong)',
+					medium: 'var(--color-primary-medium)',
+					weak: 'var(--color-primary-weak)'
+				},
+				neutral: {
+					DEFAULT: 'var(--color-neutral)',
+					strong: 'var(--color-neutral-strong)',
+					medium: 'var(--color-neutral-medium)',
+					weak: 'var(--color-neutral-weak)'
+				},
+				section: {
+					DEFAULT: 'var(--color-section)',
+					strong: 'var(--color-section-strong)'
+				},
+				background: 'var(--color-background)',
+				success: {
+					DEFAULT: 'var(--color-success)',
+					weak: 'var(--color-success-weak)'
+				},
+				danger: {
+					DEFAULT: 'var(--color-danger)',
+					strong: 'var(--color-danger-strong)',
+					medium: 'var(--color-danger-medium)',
+					weak: 'var(--color-danger-weak)'
+				},
+				warning: {
+					DEFAULT: 'var(--color-warning)',
+					weak: 'var(--color-warning-weak)'
+				},
+				info: {
+					DEFAULT: 'var(--color-info)',
+					weak: 'var(--color-info-weak)'
+				},
+				special: {
+					black: 'var(--color-special-black)',
+					white: 'var(--color-special-white)'
+				}
+			}
     },
   },
   plugins: [],

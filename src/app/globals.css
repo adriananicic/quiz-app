@@ -2,3 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--color-section: #ffffff;
+	--color-section-strong: #f9fafb;
+	--color-background: #f1f2f4;
+
+	--color-primary: #00b7ff;
+	--color-primary-strong: #0093cd;
+	--color-primary-medium: #3dc8ff;
+	--color-primary-weak: #64d3ff;
+
+	--color-neutral: #0b0d0f;
+	--color-neutral-strong: #6a6c6d;
+	--color-neutral-medium: #c9cbcc;
+	--color-neutral-weak: #ebeced;
+
+	--color-info: #002fff;
+	--color-info-weak: #5070ff;
+
+	--color-success: #30ee4f;
+	--color-success-weak: #9ee8aa;
+
+	--color-danger: #f03333;
+	--color-danger-weak: #e38e8e;
+}
+
+.dark {
+	--color-section: #101213;
+	--color-section-strong: #17191a;
+	--color-background: #0b0d0f;
+
+	--color-primary: #00b7ff;
+	--color-primary-strong: #0093cd;
+	--color-primary-medium: #3dc8ff;
+	--color-primary-weak: #64d3ff;
+
+	--color-neutral: #ffffff;
+	--color-neutral-strong: #939495;
+	--color-neutral-medium: #4c4d4e;
+	--color-neutral-weak: #232525;
+
+	--color-info: #002fff;
+	--color-info-weak: #5070ff;
+
+	--color-success: #30ee4f;
+	--color-success-weak: #9ee8aa;
+
+	--color-danger: #f03333;
+	--color-danger-weak: #e38e8e;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.no-scrollbar {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	padding: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #00000080;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #000000a0;
+}
+
