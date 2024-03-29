@@ -1,4 +1,4 @@
-import { FC, ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 import { IoCloseCircle } from "react-icons/io5";
 
 interface IDialogContext {
@@ -8,7 +8,7 @@ interface IDialogContext {
 
 const DialogContext = createContext<IDialogContext>({
   element: null,
-  setModal: (element) => {},
+  setModal: () => {},
 });
 
 const DialogProvider = ({ children }: { children: ReactNode }) => {

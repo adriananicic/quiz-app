@@ -1,10 +1,8 @@
 "use client";
 import useDialog from "@/components/DIalogProvider";
-import { ToggleTheme } from "@/components/Theme/ToggleTheme";
 import { Button } from "@/components/atoms/Button";
 import Heading from "@/components/atoms/Heading";
 import { Section } from "@/components/atoms/Section";
-import { Spinner } from "@/components/atoms/Spinner";
 import { Table } from "@/components/atoms/Table";
 import { CreateQuizModal } from "@/components/modals/CreateQuizModal";
 import { EditQuizModal } from "@/components/modals/EditQuizModal";
