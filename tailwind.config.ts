@@ -37,8 +37,6 @@ const config: Config = {
 				},
 				danger: {
 					DEFAULT: 'var(--color-danger)',
-					strong: 'var(--color-danger-strong)',
-					medium: 'var(--color-danger-medium)',
 					weak: 'var(--color-danger-weak)'
 				},
 				warning: {
@@ -49,10 +47,6 @@ const config: Config = {
 					DEFAULT: 'var(--color-info)',
 					weak: 'var(--color-info-weak)'
 				},
-				special: {
-					black: 'var(--color-special-black)',
-					white: 'var(--color-special-white)'
-				}
 			}
     },
   },

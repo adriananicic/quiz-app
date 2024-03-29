@@ -1,5 +1,6 @@
 "use client";
 import useDialog from "@/components/DIalogProvider";
+import { Background } from "@/components/molecules/Background";
 import Link from "next/link";
 import React from "react";
 
@@ -11,11 +12,7 @@ export const LandingPage = () => {
   return (
     <div className="w-full h-full min-h-screen">
       <div className="fixed top-0 left-0 right-0 bottom-0 bg-black" />
-      <img
-        className="w-full h-full fixed opacity-20 object-cover "
-        src="https://assets-global.website-files.com/5f8b3f92189560cd389cf2b3/63ea3ee7ccb1b557b4a39e79_Team-Building-Quiz-Questions2.jpg"
-        alt=""
-      />
+      <Background />
       <div className="w-full h-full absolute top-0 left-0 sm:p-0 p-5 ">
         <div className="flex flex-col w-full h-full justify-center items-center">
           <h1 className="sm:text-6xl text-4xl font-bold text-primary text-center">
