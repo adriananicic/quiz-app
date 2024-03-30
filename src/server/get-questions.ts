@@ -1,7 +1,7 @@
 "use server"
 export const getQuestions = async () => {
     try {
-      const response = await fetch('http://localhost:4000/question');
+      const response = await fetch('https://quiz-server-nh79.onrender.com/question');
   
       if (!response.ok) {
         throw new Error('Network response was not ok');

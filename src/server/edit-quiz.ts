@@ -2,7 +2,7 @@
 
 export const editQuizById = async (quizData:{name:string,questionIds:number[]}, id:number) => {
     try {
-      const response = await fetch(`http://localhost:4000/quiz/${id}`, {
+      const response = await fetch(`https://quiz-server-nh79.onrender.com/quiz/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

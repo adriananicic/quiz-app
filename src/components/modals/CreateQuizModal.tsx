@@ -74,7 +74,7 @@ export const CreateQuizModal = () => {
             {newQuestions.map((question: NewQuestion) => (
               <div
                 key={question.id}
-                className="w-full flex justify-between items-center"
+                className="w-full text-neutral flex justify-between items-center"
               >
                 <div className="flex flex-col gap-1 m-2">
                   <p>

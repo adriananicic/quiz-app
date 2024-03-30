@@ -1,7 +1,7 @@
 'use server'
 export const getQuizById = async (quizId:number) => {
     try {
-        const response = await fetch(`http://localhost:4000/quiz/${quizId}`);
+        const response = await fetch(`https://quiz-server-nh79.onrender.com/quiz/${quizId}`);
         if (!response.ok) {
             throw new Error("Failed to fetch quiz");
         }

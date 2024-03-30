@@ -4,7 +4,7 @@ import { Question } from "@/types";
 
 export const createQuestion = async (question: {question:string, answer:string}) => {
     try {
-      const response = await fetch('http://localhost:4000/question', {
+      const response = await fetch(`https://quiz-server-nh79.onrender.com/question`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
