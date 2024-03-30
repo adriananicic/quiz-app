@@ -1,8 +1,7 @@
 "use client";
 import { Spinner } from "@/components/atoms/Spinner";
 import { useGetQuiz } from "@/hooks/use-get-quiz";
-import { ShowcasePage } from "@/pages/ShowcasePage";
-import { getQuizById } from "@/server/get-quiz-by-id";
+import { ShowcasePage } from "@/components/pages/ShowcasePage";
 import React from "react";
 
 const page = ({ params }: { params: { id: string } }) => {

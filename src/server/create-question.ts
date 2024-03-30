@@ -1,6 +1,5 @@
 "use server"
 
-import { Question } from "@/types";
 
 export const createQuestion = async (question: {question:string, answer:string}) => {
     try {

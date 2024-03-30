@@ -1,5 +1,4 @@
 "use client";
-import useDialog from "@/components/DIalogProvider";
 import { Background } from "@/components/molecules/Background";
 import Link from "next/link";
 import React from "react";

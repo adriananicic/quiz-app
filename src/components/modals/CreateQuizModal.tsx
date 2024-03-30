@@ -1,5 +1,5 @@
 import { useLoadQuestions } from "@/hooks/use-load-questions";
-import React, { useState } from "react";
+import React from "react";
 import { Dropdown } from "../atoms/Dropdown";
 import Heading from "../atoms/Heading";
 import { Button } from "../atoms/Button";

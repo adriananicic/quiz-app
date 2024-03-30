@@ -1,7 +1,6 @@
 import useDialog from "@/components/DIalogProvider";
 import { NewQuestion } from "@/components/modals/CreateQuizModal";
 import { createQuestion } from "@/server/create-question";
-import { createNewQuiz } from "@/server/create-quiz";
 import { editQuizById } from "@/server/edit-quiz";
 import { getQuizById } from "@/server/get-quiz-by-id";
 import { Question, Quiz } from "@/types";
@@ -49,7 +48,7 @@ export const useEditQuiz = (id:number) => {
   };
 
   const editQuiz = async () => {
-    const allIds = [...selectedQuestionIds, ...newQuestions.map((q) => q.questionId), ...quizQuestions.map(q=>q.questionId)];
+    const allIds = [...selectedQuestionIds, ...newQuestions.map((q) => q.id), ...quizQuestions.map(q=>q.questionId)];
     if (quizTitle) {
       setLoading(true)
 

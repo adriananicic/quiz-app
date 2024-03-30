@@ -1,4 +1,3 @@
-import { Question } from "@/types";
 import classNames from "classnames";
 import React, { FC, useEffect, useRef, useState } from "react";
 

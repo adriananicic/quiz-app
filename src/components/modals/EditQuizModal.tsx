@@ -101,7 +101,7 @@ export const EditQuizModal = ({ id }: { id: number }) => {
           <div className="h-[250px] overflow-y-auto pt-3">
             {newQuestions.map((question: NewQuestion) => (
               <div
-                key={question.questionId}
+                key={question.id}
                 className="w-full flex text-neutral justify-between items-center"
               >
                 <div className="flex flex-col gap-1 m-2">

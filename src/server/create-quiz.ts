@@ -1,5 +1,4 @@
 'use server'
-import { Quiz } from "@/types";
 
 
 export const createNewQuiz = async (quizData:{name:string,questionIds:number[]}) => {
