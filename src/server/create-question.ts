@@ -16,7 +16,6 @@ export const createQuestion = async (question: {question:string, answer:string})
       }
   
       console.log('New question created successfully');
-      console.log(response)
       return response.json()
     } catch (error) {
       console.error('Error creating a new question:', error);

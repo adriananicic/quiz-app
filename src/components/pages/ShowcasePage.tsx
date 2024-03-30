@@ -24,7 +24,7 @@ const TextDisplay = ({
       <p className="text-lg font-bold text-primary-weak opacity-50">
         Question {index + 1}
       </p>
-      <p className="text-4xl font-semibold ">{text}</p>
+      <p className="sm:text-4xl text-xl font-semibold ">{text}</p>
     </div>
   );
 };
@@ -41,7 +41,7 @@ export const ShowcasePage = ({ quiz }: { quiz: Quiz }) => {
   return (
     <div className="w-full h-full min-h-screen flex flex-col justify-between items-center px-10 py-20 bg-black overflow-y-hidden">
       <Background />
-      <div className="text-primary text-2xl font-semibold">{quiz.name}</div>
+      <div className="text-primary text-2xl  font-semibold">{quiz.name}</div>
       {!displayCompleted ? (
         <div>
           <TextDisplay
@@ -62,7 +62,7 @@ export const ShowcasePage = ({ quiz }: { quiz: Quiz }) => {
       <p
         onClick={handleButtonClick}
         className={classNames(
-          "text-primary cursor-pointer z-10",
+          "text-primary cursor-pointer z-10 mb-10",
           displayCompleted && "opacity-0"
         )}
       >

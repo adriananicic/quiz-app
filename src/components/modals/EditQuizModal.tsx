@@ -25,6 +25,7 @@ export const EditQuizModal = ({ id }: { id: number }) => {
     editQuiz,
     removeQuizQuestion,
     quizQuestions,
+    error,
   } = useEditQuiz(id);
 
   let optionIds: number[] = [];
@@ -46,6 +47,7 @@ export const EditQuizModal = ({ id }: { id: number }) => {
           />
         }
       />
+      <p className="text-danger text-sm w-max h-4">{error}</p>
       <TextInput
         label="Quiz Title"
         value={quizTitle}

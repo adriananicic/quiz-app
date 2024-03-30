@@ -19,6 +19,8 @@ export const useEditQuiz = (id:number) => {
   const [newQuestions, setNewQuestions] = useState<NewQuestion[]>([]);
   const [quizTitle, setQuizTitle] = useState<string>("");
 
+  const [error, setError] = useState<string | null>()
+
   const fetchQ = async ()=>{
     const quiz = await getQuizById(id)
     setQuizTitle(quiz.name)
@@ -50,6 +52,7 @@ export const useEditQuiz = (id:number) => {
   const editQuiz = async () => {
     const allIds = [...selectedQuestionIds, ...newQuestions.map((q) => q.id), ...quizQuestions.map(q=>q.questionId)];
     if (quizTitle) {
+      setError(null)
       setLoading(true)
 
       await editQuizById({
@@ -59,8 +62,10 @@ export const useEditQuiz = (id:number) => {
       window.location.reload();
       setLoading(false)
       setModal(null);
+    }else{
+      setError('Title or Questions missing')
     }
   };
 
-  return {setSelectedQuestionIds, removeNewQuestion,newQuestions,createNewQuestion,setNewQuestionAnswer,setNewQuestionTitle,setQuizTitle,editQuiz, loading, quizTitle, removeQuizQuestion, quizQuestions}
+  return {setSelectedQuestionIds, removeNewQuestion,newQuestions,createNewQuestion,setNewQuestionAnswer,setNewQuestionTitle,setQuizTitle,editQuiz, loading, quizTitle, removeQuizQuestion, quizQuestions, error}
 };

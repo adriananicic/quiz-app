@@ -4,9 +4,7 @@ import { Dropdown } from "../atoms/Dropdown";
 import Heading from "../atoms/Heading";
 import { Button } from "../atoms/Button";
 import { TextInput } from "../atoms/TextInput";
-import { createQuestion } from "@/server/create-question";
 import { FaTrash } from "react-icons/fa";
-import { createNewQuiz } from "@/server/create-quiz";
 import { useCreateQuiz } from "@/hooks/use-create-quiz";
 
 export type NewQuestion = {
@@ -28,6 +26,7 @@ export const CreateQuizModal = () => {
     setQuizTitle,
     setSelectedQuestionIds,
     loading,
+    error,
   } = useCreateQuiz();
 
   return (
@@ -44,6 +43,7 @@ export const CreateQuizModal = () => {
           />
         }
       />
+      <p className="text-danger text-sm w-max h-4">{error}</p>
       <TextInput label="Quiz Title" onChange={(value) => setQuizTitle(value)} />
       <div className="w-full flex items-center gap-5">
         <form
