@@ -64,11 +64,13 @@ export const ShowcasePage = ({ quiz }: { quiz: Quiz }) => {
       )}
 
       <div className="flex flex-col items-center justify-center gap-5 w-full h-full z-10 mb-10">
-        <FaBackward
-          color="blue"
-          className="cursor-pointer"
-          onClick={() => handleBackClick()}
-        />
+        {!displayCompleted && (
+          <FaBackward
+            color="blue"
+            className="cursor-pointer"
+            onClick={() => handleBackClick()}
+          />
+        )}
         <p
           onClick={handleButtonClick}
           className={classNames(
