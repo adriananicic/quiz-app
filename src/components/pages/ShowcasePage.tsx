@@ -65,21 +65,29 @@ export const ShowcasePage = ({ quiz }: { quiz: Quiz }) => {
 
       <div className="flex flex-col items-center justify-center gap-5 w-full h-full z-10 mb-10">
         {!displayCompleted && (
-          <FaBackward
-            color="blue"
-            className="cursor-pointer"
+          <p
+            className="cursor-pointer text-primary hover:text-primary-strong text-sm"
             onClick={() => handleBackClick()}
-          />
+          >
+            Previous Question
+          </p>
         )}
-        <p
-          onClick={handleButtonClick}
-          className={classNames(
-            "text-primary cursor-pointer ",
-            displayCompleted && "opacity-0"
-          )}
-        >
-          {buttonLabel}
-        </p>
+        {!displayCompleted && (
+          <p
+            onClick={handleButtonClick}
+            className="text-primary cursor-pointer hover:text-primary-strong text-2xl "
+          >
+            {buttonLabel}
+          </p>
+        )}
+        {displayCompleted && (
+          <p
+            onClick={() => window.location.reload()}
+            className="text-primary cursor-pointer hover:text-primary-strong "
+          >
+            Replay Quiz
+          </p>
+        )}
       </div>
     </div>
   );
