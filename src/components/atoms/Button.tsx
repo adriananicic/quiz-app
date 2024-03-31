@@ -63,7 +63,7 @@ export const Button: FC<IButtonProps> = ({
       disabled={disabled}
       className={classNames(
         className || "bg-neutral-medium",
-        "w-full h-10 rounded-lg p-3 px-4  text-neutral flex items-center justify-center",
+        "w-full h-10 rounded-lg p-5 py-6 text-neutral sm:text-xl text-xs flex items-center justify-center",
         "hover:scale-[102%] active:scale-[98%] duration-150 transition-all "
       )}
     >
