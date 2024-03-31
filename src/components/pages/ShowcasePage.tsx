@@ -4,6 +4,7 @@ import { useShowcase } from "@/hooks/use-showcase";
 import { Quiz } from "@/types";
 import classNames from "classnames";
 import React from "react";
+import { FaBackward } from "react-icons/fa";
 
 const TextDisplay = ({
   text,
@@ -36,14 +37,17 @@ export const ShowcasePage = ({ quiz }: { quiz: Quiz }) => {
     handleButtonClick,
     index,
     openAnswer,
+    handleBackClick,
   } = useShowcase(quiz);
 
   return (
     <div className="w-full h-full min-h-screen flex flex-col justify-between items-center px-10 py-20 bg-black overflow-y-hidden">
       <Background />
-      <div className="text-primary text-2xl  font-semibold">{quiz.name}</div>
+      <div className="text-primary text-2xl z-10 font-semibold">
+        {quiz.name}
+      </div>
       {!displayCompleted ? (
-        <div>
+        <div className="z-10">
           <TextDisplay
             index={index}
             text={"Question: " + quiz.questions[index].question}
@@ -59,15 +63,22 @@ export const ShowcasePage = ({ quiz }: { quiz: Quiz }) => {
         <p className="text-5xl text-primary text-center">Quiz Completed</p>
       )}
 
-      <p
-        onClick={handleButtonClick}
-        className={classNames(
-          "text-primary cursor-pointer z-10 mb-10",
-          displayCompleted && "opacity-0"
-        )}
-      >
-        {buttonLabel}
-      </p>
+      <div className="flex flex-col items-center justify-center gap-5 w-full h-full z-10 mb-10">
+        <FaBackward
+          color="blue"
+          className="cursor-pointer"
+          onClick={() => handleBackClick()}
+        />
+        <p
+          onClick={handleButtonClick}
+          className={classNames(
+            "text-primary cursor-pointer ",
+            displayCompleted && "opacity-0"
+          )}
+        >
+          {buttonLabel}
+        </p>
+      </div>
     </div>
   );
 };

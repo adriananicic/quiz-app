@@ -24,5 +24,9 @@ export const useShowcase = (quiz:Quiz) => {
     }
   };
 
-  return {buttonLabel, index, openAnswer, displayCompleted, handleButtonClick}
+  const handleBackClick =()=>{
+    if(index > 0) setIndex(prev=>prev-1)
+  }
+
+  return {buttonLabel, index, openAnswer, displayCompleted, handleButtonClick,handleBackClick}
 };
