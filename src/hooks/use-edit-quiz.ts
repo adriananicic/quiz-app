@@ -3,7 +3,7 @@ import { NewQuestion } from "@/components/modals/CreateQuizModal";
 import { createQuestion } from "@/server/create-question";
 import { editQuizById } from "@/server/edit-quiz";
 import { getQuizById } from "@/server/get-quiz-by-id";
-import { Question, Quiz } from "@/types";
+import { Question } from "@/types";
 import { useEffect, useState } from "react";
 
 export const useEditQuiz = (id:number) => {
@@ -42,6 +42,8 @@ export const useEditQuiz = (id:number) => {
       });
       setNewQuestions((prev) => [...prev, newQuestion]);
     }
+    setNewQuestionAnswer('')
+    setNewQuestionTitle('')
   };
 
   const removeNewQuestion = (question: NewQuestion) => {
@@ -66,5 +68,5 @@ export const useEditQuiz = (id:number) => {
     }
   };
 
-  return {setSelectedQuestionIds, removeNewQuestion,newQuestions,createNewQuestion,setNewQuestionAnswer,setNewQuestionTitle,setQuizTitle,editQuiz, loading, quizTitle, removeQuizQuestion, quizQuestions, error}
+  return {setSelectedQuestionIds, removeNewQuestion,newQuestions,createNewQuestion,setNewQuestionAnswer,setNewQuestionTitle,setQuizTitle,editQuiz, loading, quizTitle, removeQuizQuestion, quizQuestions, error, newQuestionTitle, newQuestionAnswer}
 };

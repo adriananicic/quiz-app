@@ -24,6 +24,8 @@ export const useCreateQuiz = () => {
       });
       setNewQuestions((prev) => [...prev, newQuestion]);
     }
+    setNewQuestionAnswer('')
+    setNewQuestionTitle('')
   };
 
   const removeNewQuestion = (question: NewQuestion) => {
@@ -48,5 +50,5 @@ export const useCreateQuiz = () => {
     }
   };
 
-  return {setSelectedQuestionIds, removeNewQuestion,newQuestions,createNewQuestion,setNewQuestionAnswer,setNewQuestionTitle,setQuizTitle,createQuiz, loading, error}
+  return {setSelectedQuestionIds, removeNewQuestion,newQuestions,createNewQuestion,setNewQuestionAnswer,setNewQuestionTitle,setQuizTitle,createQuiz, loading, error, newQuestionAnswer, newQuestionTitle}
 };

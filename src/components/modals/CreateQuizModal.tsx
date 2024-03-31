@@ -27,6 +27,8 @@ export const CreateQuizModal = () => {
     setSelectedQuestionIds,
     loading,
     error,
+    newQuestionAnswer,
+    newQuestionTitle,
   } = useCreateQuiz();
 
   return (
@@ -54,10 +56,12 @@ export const CreateQuizModal = () => {
           <TextInput
             onChange={(value) => setNewQuestionTitle(value)}
             label="Question"
+            value={newQuestionTitle}
           />
           <TextInput
             onChange={(value) => setNewQuestionAnswer(value)}
             label="Answer"
+            value={newQuestionAnswer}
           />
           <Button
             submit
@@ -70,7 +74,7 @@ export const CreateQuizModal = () => {
         </form>
         <div className="w-[50%]  ">
           <p className="mt-5 text-neutral font-semibold">New Questions:</p>
-          <div className="h-[250px] overflow-y-auto pt-3">
+          <div className="h-[250px] overflow-y-auto pt-3 overflow-x-hidden">
             {newQuestions.map((question: NewQuestion) => (
               <div
                 key={question.id}
@@ -85,7 +89,7 @@ export const CreateQuizModal = () => {
                   </p>
                 </div>
                 <FaTrash
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-110 transition-all duration-150 "
                   onClick={() => {
                     removeNewQuestion(question);
                   }}

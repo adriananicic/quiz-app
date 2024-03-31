@@ -36,7 +36,7 @@ export const EditQuizModal = ({ id }: { id: number }) => {
   return (
     <div className="sm:p-10 p-2 flex flex-col gap-3">
       <Heading
-        title="Create a new Quiz"
+        title="Edit a Quiz"
         actions={
           <Button
             loading={loading}
@@ -68,7 +68,7 @@ export const EditQuizModal = ({ id }: { id: number }) => {
             </p>
           </div>
           <FaTrash
-            className="cursor-pointer"
+            className="cursor-pointer hover:scale-110 transition-all duration-150 "
             onClick={() => {
               removeQuizQuestion(q);
             }}
@@ -100,7 +100,7 @@ export const EditQuizModal = ({ id }: { id: number }) => {
         </form>
         <div className="w-[50%]  ">
           <p className="mt-5 text-neutral font-semibold">New Questions:</p>
-          <div className="h-[250px] overflow-y-auto pt-3">
+          <div className="h-[250px] overflow-y-auto pt-3 overflow-x-hidden">
             {newQuestions.map((question: NewQuestion) => (
               <div
                 key={question.id}
@@ -115,7 +115,7 @@ export const EditQuizModal = ({ id }: { id: number }) => {
                   </p>
                 </div>
                 <FaTrash
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-110 transition-all duration-150 "
                   onClick={() => {
                     removeNewQuestion(question);
                   }}

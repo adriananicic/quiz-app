@@ -1,5 +1,4 @@
 import { getQuestions } from "@/server/get-questions";
-import { getQuizzes } from "@/server/get-quizzes";
 import { Question } from "@/types";
 import { useEffect, useState } from "react";
 
@@ -27,6 +26,5 @@ export const useLoadQuestions = ()=>{
   }, []); 
 
   return {questions, refetch, isLoading}
-
 }
 
