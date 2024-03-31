@@ -12,7 +12,6 @@ export const useEditQuiz = (id:number) => {
 
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([])
   
-
   const [selectedQuestionIds, setSelectedQuestionIds] = useState<number[]>([]);
   const [newQuestionTitle, setNewQuestionTitle] = useState<string>("");
   const [newQuestionAnswer, setNewQuestionAnswer] = useState<string>("");

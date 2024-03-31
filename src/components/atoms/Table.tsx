@@ -75,47 +75,43 @@ export const Table: FC<ITableProps> = ({
 }) => {
   const titleKeys = Object.keys(titles);
 
+  if (loading) return <p className="text-xl text-info">Loading...</p>;
+
   return (
-    <>
-      {loading ? (
-        <p className="text-xl text-info">Loading...</p>
-      ) : (
-        <div className="w-full text-neutral rounded-xl  border-2 border-info-weak   shadow-xl overflow-hidden border-collapse">
-          <table className="w-full mt-[-1px]">
-            <thead>
-              <TableRow header>
-                {titleKeys.map((title, i) => (
-                  <TableHeader key={i}> {title} </TableHeader>
-                ))}
-                {actionRow && <TableHeader right> Actions </TableHeader>}
-              </TableRow>
-            </thead>
-            <tbody>
-              {objects
-                .sort((a, b) => (a[titleKeys[0]] > b[titleKeys[0]] ? 1 : -1))
-                .map((object, i) => {
-                  return (
-                    <TableRow key={i}>
-                      {titleKeys.map((title, j) => (
-                        <TableData
-                          key={j}
-                          onClick={() => {
-                            onClick && onClick(object);
-                          }}
-                        >
-                          {object[title]}
-                        </TableData>
-                      ))}
-                      {actionRow && (
-                        <TableData right> {actionRow(object)} </TableData>
-                      )}
-                    </TableRow>
-                  );
-                })}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </>
+    <div className="w-full text-neutral rounded-xl  border-2 border-info-weak   shadow-xl overflow-hidden border-collapse">
+      <table className="w-full mt-[-1px]">
+        <thead>
+          <TableRow header>
+            {titleKeys.map((title, i) => (
+              <TableHeader key={i}> {title} </TableHeader>
+            ))}
+            {actionRow && <TableHeader right> Actions </TableHeader>}
+          </TableRow>
+        </thead>
+        <tbody>
+          {objects
+            .sort((a, b) => (a[titleKeys[0]] > b[titleKeys[0]] ? 1 : -1))
+            .map((object, i) => {
+              return (
+                <TableRow key={i}>
+                  {titleKeys.map((title, j) => (
+                    <TableData
+                      key={j}
+                      onClick={() => {
+                        onClick && onClick(object);
+                      }}
+                    >
+                      {object[title]}
+                    </TableData>
+                  ))}
+                  {actionRow && (
+                    <TableData right> {actionRow(object)} </TableData>
+                  )}
+                </TableRow>
+              );
+            })}
+        </tbody>
+      </table>
+    </div>
   );
 };
