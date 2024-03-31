@@ -58,6 +58,7 @@ export const DashboardPage = () => {
                 handleDeleteClick(quiz.quizId);
               }}
               label="Delete"
+              hasConfirmation
             />
           </div>
         )}
