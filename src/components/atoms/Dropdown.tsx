@@ -60,14 +60,14 @@ export const Dropdown: FC<IDropdownProps> = ({
         <div className="w-full flex flex-col ">
           {options.map((option, key) => (
             <div
-              className="w-full border-t-[1px] p-2 border-neutral flex items-center justify-between"
+              onClick={() => handleOptionChange(option.id)}
+              className="w-full border-t-[1px] p-2 border-neutral flex items-center justify-between cursor-pointer"
               key={key}
             >
               {option.question}
               <div
-                onClick={() => handleOptionChange(option.id)}
                 className={classNames(
-                  "rounded-xl h-4 w-4 border-[1px] border-neutral  cursor-pointer ",
+                  "rounded-xl h-4 w-4 border-[1px] border-neutral ",
                   selectedIds?.includes(option.id)
                     ? "bg-info"
                     : "bg-transparent"
